@@ -1,4 +1,4 @@
-# Apache web server hosted on the Amazon EC2 virtual machine instance running Ubuntu.
+# A nice solution to deploy an Ubuntu and Apache-based web server running the latest WordPress using Terraform and Ansible hosted on the Amazon EC2 virtual machine instance.
 ## Details of the automated provisioner
 ### Supported cloud: 
 - AWS
