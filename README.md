@@ -1,4 +1,4 @@
-# Apache web server running on the latest Ubuntu linux hosted on AWS cloud
+# Apache web server hosted on the AWS EC2 virtual machine running Ubuntu.
 ## Details of the automated provisioner
 ### Supported cloud: 
 - AWS
