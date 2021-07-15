@@ -1,4 +1,4 @@
-# Apache web server hosted on the AWS EC2 virtual machine running Ubuntu.
+# Apache web server hosted on the Amazon EC2 virtual machine instance running Ubuntu.
 ## Details of the automated provisioner
 ### Supported cloud: 
 - AWS
@@ -7,7 +7,7 @@
 - Terraform
 ### Provisioning of the Amazon EC2 instance done using the latest version of: 
 - Ansible
-### Configuring the webserver using Ansible. The latest versions of  below are being used: 
+### Configuring the webserver using Ansible. The latest versions of below are being used: 
 - Apache HTTP Server
 - MySQL/MariaDB
 - PHP
