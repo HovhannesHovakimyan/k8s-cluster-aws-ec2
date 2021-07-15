@@ -24,4 +24,4 @@ aws configure
 ```
 The configuration process stores your credentials in a file at ~/.aws/credentials on MacOS and Linux, or %UserProfile%\.aws\credentials on Windows.
 
-Note: This tutorial will provision resources that qualify under the AWS free tier. We are not responsible for any charges that you may incur.
+Note: This solution will provision resources that qualify under the AWS free tier. We are not responsible for any charges that you may incur.
