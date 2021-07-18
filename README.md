@@ -16,6 +16,8 @@
 - The  [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)  installed.
 - [An AWS account](https://aws.amazon.com/free/).
 - Your AWS credentials. You can  [create a new Access Key on this page](https://console.aws.amazon.com/iam/home?#/security_credentials).
+- export AWS_ACCESS_KEY_ID="anaccesskey"
+- export AWS_SECRET_ACCESS_KEY="asecretkey"
 
 Configure the AWS CLI from your terminal. Follow the prompts to input your AWS Access Key ID and Secret Access Key.
 
