@@ -18,6 +18,11 @@ variable "ingress_rules" {
   type        = list(any)
   default = [
     {
+      port        = -1
+      protocol    = "icmp"
+      description = "allow all ICMP"
+    },
+    {
       port        = 22
       protocol    = "tcp"
       description = "TCP Port 22 allowing SSH connection"
