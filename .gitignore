@@ -1,3 +1,7 @@
+# Local keypair directory contents only
+keypair/*
+!keypair/.gitkeep
+
 # Local .terraform directories
 **/.terraform/*
 

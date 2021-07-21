@@ -5,5 +5,6 @@ resource "aws_instance" "app_server" {
   subnet_id                   = var.subnet_id
   associate_public_ip_address = true
   vpc_security_group_ids      = [var.sg_id]
+  key_name                    = var.key_name
   tags                        = var.tags
 }
