@@ -14,6 +14,18 @@ variable "key_name" {
   type = string
 }
 
+variable "private_key_path" {
+  type = string
+}
+
+variable "ansible_file_path" {
+  type = string
+}
+
+variable "ssh_user" {
+  type = string
+}
+
 variable "tags" {
   type = map(string)
 }

@@ -7,4 +7,18 @@ resource "aws_instance" "app_server" {
   vpc_security_group_ids      = [var.sg_id]
   key_name                    = var.key_name
   tags                        = var.tags
+
+  provisioner "remote-exec" {
+    inline = ["echo 'Wait until SSH is ready'"]
+
+    connection {
+      type        = "ssh"
+      user        = var.ssh_user
+      private_key = file(var.private_key_path)
+      host        = aws_instance.app_server.public_ip
+    }
+  }
+  provisioner "local-exec" {
+    command = "ansible-playbook  -i ${aws_instance.app_server.public_ip}, --private-key ${var.private_key_path} ${var.ansible_file_path}"
+  }
 }
