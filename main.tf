@@ -4,9 +4,10 @@ provider "aws" {
 }
 
 locals {
-  ssh_user         = "ubuntu" // For an Ubuntu AMI, the user name is ubuntu.
-  key_name         = "for-demo"
-  private_key_path = "./keypair/for-demo.pem"
+  ssh_user          = "ubuntu" // For an Ubuntu AMI, the user name is ubuntu.
+  key_name          = "for-demo"
+  private_key_path  = "./keypair/for-demo.pem"
+  ansible_file_path = "./ansible/nginx.yaml"
 }
 
 module "vpc" {
@@ -52,9 +53,9 @@ module "route_table" {
 
 module "vpc_to_rt" {
   source = "./modules/vpc_to_rt"
-  
-  vpc_id     = data.aws_vpc.main.id
-  rt_id      = module.route_table.rt_id
+
+  vpc_id = data.aws_vpc.main.id
+  rt_id  = module.route_table.rt_id
 }
 
 module "subnet" {
@@ -92,11 +93,14 @@ data "aws_security_group" "AppSrvSecGrp" {
 module "ec2" {
   source = "./modules/ec2"
 
-  subnet_id = module.subnet.subnet_id
-  nic_id    = module.nic.nic_id
-  sg_id     = data.aws_security_group.AppSrvSecGrp.id
-  key_name  = local.key_name
-  tags      = var.common_tags
+  subnet_id         = module.subnet.subnet_id
+  nic_id            = module.nic.nic_id
+  sg_id             = data.aws_security_group.AppSrvSecGrp.id
+  key_name          = local.key_name
+  ssh_user          = local.ssh_user
+  private_key_path  = local.private_key_path
+  ansible_file_path = local.ansible_file_path
+  tags              = var.common_tags
 
   depends_on = [
     module.igw // It's recommended to denote that the AWS Instance or Elastic IP depends on the Internet Gateway.
